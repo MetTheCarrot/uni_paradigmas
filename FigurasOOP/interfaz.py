@@ -6,7 +6,7 @@ from rectangulo import rectangulo
 
 class interfaz:
     def __init__(self):
-        self.circulo, self.cuadrado, self.triangulo, self.rectangulo = None, None, None, None        
+        self.circulo, self.cuadrado, self.triangulo, self.rectangulo = None, None, None, None
 
     # Menú principal
 
@@ -37,9 +37,6 @@ class interfaz:
                 self.submenu_triangulo()
             case 4: # Rectangulo
                 self.submenu_rectangulo()
-            case _:
-                print("Opcion no valida")
-                pauseOS()
         self.menu()
     
     # Figura: Circulo
@@ -58,10 +55,11 @@ class interfaz:
         self.opciones_circulo(opc)
 
     def esta_creado_instancia_circulo(self):
-        if(self.circulo == None):
+        if(self.circulo == None): 
             print("No se han ingresado los valores")
             return False
         return True
+
 
     def opciones_circulo(self, opc : int):
         match opc:
@@ -70,13 +68,13 @@ class interfaz:
                     floatInput("Ingrese el valor del radio: ")
                 )
             case 2:
-                print("El área del circulo es: " + str(self.circulo.area())) if self.esta_creado_instancia_circulo() else None
+                print(f'El área del circulo es: {self.circulo.area()}') if self.esta_creado_instancia_circulo() else None
             case 3:
-                print("El perímetro del circulo es: " + str(self.circulo.perimetro())) if self.esta_creado_instancia_circulo() else None
+                print(f'El perímetro del circulo es: {self.circulo.perimetro()}') if self.esta_creado_instancia_circulo() else None
             case 4:
-                print("El diametro del circulo es: " + str(self.circulo.diametro())) if self.esta_creado_instancia_circulo() else None
+                print(f'El diametro del circulo es: {self.circulo.diametro()}') if self.esta_creado_instancia_circulo() else None
             case 5:
-                print("El arco del circulo es: " + str(self.circulo.arco(floatInput("Ingrese el ángulo: ")))) if self.esta_creado_instancia_circulo() else None
+                print(f'El arco del circulo es: {self.circulo.arco(floatInput("Ingrese el ángulo: "))}') if self.esta_creado_instancia_circulo() else None
             case 0:
                 clearOS()
                 print("Volviendo...")
@@ -89,7 +87,7 @@ class interfaz:
     def submenu_cuadrado(self):
         opc = menu("""
         --- Cuadrado ---
-        [1] Cambiar lado
+        [1] Ingresa el valor del lado
         [2] Calcular área
         [3] Calcular perímetro
         [4] Calcular diagonal

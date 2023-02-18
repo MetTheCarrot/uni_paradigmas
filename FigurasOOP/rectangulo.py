@@ -1,4 +1,3 @@
-from utils import menu, pauseOS, clearOS, floatInput
 from math import sqrt
 
 class rectangulo:
@@ -7,10 +6,10 @@ class rectangulo:
         self.z = z
     
     def area(self):
-        return self.x * self.z
+        return round(self.x * self.z, 2)
     
     def perimetro(self):
-        return 2 * (self.x + self.z)
+        return round(2 * (self.x + self.z), 2)
     
     def diagonal(self):
-        return sqrt(self.x ** 2 + self.z ** 2)    
+        return round(sqrt(self.x ** 2 + self.z ** 2),2)

@@ -14,5 +14,5 @@ class circulo:
         return round(2 * self.radio, 2)
 
     def arco(self, angulo : float):
-        return round(self.radio * angulo, 2)
+        return round((2*self.pi*self.radio*angulo)/360, 2)
         
